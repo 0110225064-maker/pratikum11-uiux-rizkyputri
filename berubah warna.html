@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ubah Warna Background</title>
+<script>
+function ubahWarna() {
+let warna = document.getElementById('warna').value;
+document.body.style.backgroundColor = warna;
+}
+</script>
+</head>
+<body>
+<h2>Program Ubah Warna</h2>
+Pilih warna:
+<select id="warna" onchange="ubahWarna()">
+<option value="white">Putih</option>
+<option value="red">Merah</option>
+<option value="blue">Biru</option>
+<option value="green">Hijau</option>
+<option value="yellow">Kuning</option>
+</select>
+</body>
+</html>

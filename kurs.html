@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kurs Rupiah</title>
+<script>
+function konversi() {
+let nilai = parseFloat(document.getElementById('nilai').value);
+let valas = document.getElementById('valas').value;
+let kurs = {
+usd: 9915,
+sgd: 13472,
+myr: 874,
+jpy: 120,
+eur: 15888,
+sar: 3592
+};
+document.getElementById('hasil').value = nilai * kurs[valas];
+}
+</script>
+</head>
+<body>
+<h2>Kurs Rupiah</h2>
+Nilai Asing: <input type="number" id="nilai"><br><br>
+
+
+Pilih Valas:
+<select id="valas" onchange="konversi()">
+<option value="usd">Dollar US</option>
+<option value="sgd">Dollar Singapore</option>
+<option value="myr">Ringgit Malaysia</option>
+<option value="jpy">Yen Jepang</option>
+<option value="eur">Euro</option>
+<option value="sar">Riyal Arab</option>
+</select>
+<br><br>
+Hasil (Rupiah): <input type="text" id="hasil" readonly>
+</body>
+</html>

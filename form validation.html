@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Validation</title>
+<style>
+.error { color: red; font-size: 14px; }
+.invalid { border: 1px solid red; }
+</style>
+<script>
+function validate() {
+let nama = document.getElementById('nama');
+let email = document.getElementById('email');
+let jam = document.getElementById('jam');
+let tujuan = document.getElementById('tujuan');
+let jumlah = document.getElementById('jumlah');
+let valid = true;
+
+
+document.querySelectorAll('.error').forEach(e => e.innerHTML = '');
+document.querySelectorAll('input, select').forEach(e => e.classList.remove('invalid'));
+
+
+if (nama.value.trim() === '' || nama.value.length > 30) {
+valid = false;
+nama.classList.add('invalid');
+document.getElementById('err_nama').innerHTML = 'Nama tidak valid';
+}
+
+
+let emailPattern = /^[^@]+@[^@]+\.[^@]+$/;
+if (!emailPattern.test(email.value)) {
+valid = false;
+email.classList.add('invalid');
+document.getElementById('err_email').innerHTML = 'Email tidak valid';
+}
+
+
+let jamPattern = /^([01]\d|2[0-3]):[0-5]\d$/;
+if (!jamPattern.test(jam.value)) {
+valid = false;
+jam.classList.add('invalid');
+document.getElementById('err_jam').innerHTML = 'Format jam salah';
+}
+
+
+if (tujuan.value === '') {
+valid = false;
+tujuan.classList.add('invalid');
+document.getElementById('err_tujuan').innerHTML = 'Tujuan harus dipilih';
+}
+
+
+if (jumlah.value < 1 || jumlah.value > 10) {
+valid = false;
+jumlah.classList.add('invalid');
+document.getElementById('err_jumlah').innerHTML = 'Jumlah tiket 1-10';
+}
+
+
+if (valid) {
+document.getElementById('output').innerHTML = `
+<h3>Data Berhasil</h3>
+Nama: ${nama.value}<br>
+Email: ${email.value}<br>
+Jam: ${jam.value}<br>
+Tujuan: ${tujuan.value}<br>
+Jumlah Tiket: ${jumlah.value}<br>
+`;
+}
+}
+</script>
+</head>
+<body>
+</html>

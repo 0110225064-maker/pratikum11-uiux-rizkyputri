@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Image Picker</title>
+<script>
+function tampilkan() {
+let file = document.getElementById('gambar').value;
+document.getElementById('img').src = 'img/' + file;
+alert('Gambar: ' + file);
+}
+</script>
+</head>
+<body>
+<h2>Image Picker</h2>
+Pilih gambar:
+<select id="gambar" onchange="tampilkan()">
+<option value="gambar1.jpg">Gambar 1</option>
+<option value="gambar2.jpg">Gambar 2</option>
+<option value="gambar3.jpg">Gambar 3</option>
+<option value="gambar4.jpg">Gambar 4</option>
+<option value="gambar5.jpg">Gambar 5</option>
+<option value="gambar6.jpg">Gambar 6</option>
+</select>
+<br><br>
+<img id="img" width="300">
+</body>
+</html>

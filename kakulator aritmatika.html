@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kalkulator Lengkap</title>
+<script>
+function hitung(operasi) {
+let a = parseFloat(document.getElementById('angka1').value);
+let b = parseFloat(document.getElementById('angka2').value);
+let hasil;
+switch(operasi) {
+case '+': hasil = a + b; break;
+case '-': hasil = a - b; break;
+case '*': hasil = a * b; break;
+case '/': hasil = b !== 0 ? a / b : 'Error'; break;
+}
+document.getElementById('hasil').value = hasil;
+}
+</script>
+</head>
+<body>
+<h2>Kalkulator Aritmatika</h2>
+<input type="number" id="angka1">
+<input type="number" id="angka2">
+<br><br>
+<button onclick="hitung('+')">+</button>
+<button onclick="hitung('-')">-</button>
+<button onclick="hitung('*')">×</button>
+<button onclick="hitung('/')">÷</button>
+<br><br>
+Hasil: <input type="text" id="hasil" readonly>
+</body>
+</html>

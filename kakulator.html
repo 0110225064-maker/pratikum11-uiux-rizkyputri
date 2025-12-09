@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kalkulator Penjumlahan</title>
+<script>
+function jumlah() {
+let a = parseFloat(document.getElementById('angka1').value);
+let b = parseFloat(document.getElementById('angka2').value);
+let hasil = a + b;
+document.getElementById('hasil').value = hasil;
+}
+</script>
+</head>
+<body>
+<h2>Kalkulator Penjumlahan</h2>
+<input type="number" id="angka1"> +
+<input type="number" id="angka2">
+<button onclick="jumlah()">Hitung</button>
+<br><br>
+Hasil: <input type="text" id="hasil" readonly>
+</body>
+</html>
